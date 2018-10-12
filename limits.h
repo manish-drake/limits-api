@@ -11,39 +11,39 @@ public:
   Limits();
   ~Limits();
 
-  virtual limit getTxPwrDbW(); //#	1
+  virtual limit getTxPwrdBW(); //#	1
 
-  virtual limit getTxPwrDroopSifDb();   //#	2
-  virtual limit getTxPwrDroopModeSDb(); //#	3
+  virtual limit getTxPwrDroopSifdB();   //#	2
+  virtual limit getTxPwrDroopModeSdB(); //#	3
 
   virtual limit getTxFreqAccySifMHz();   //#	4
   virtual limit getTxFreqAccyModeSMHz(); //#	5
-  virtual limit getTxPulseWdSIFUs();   //#	6
-  virtual limit getTxPulseSpSIFUs();   //#	7
-  virtual limit getTxPulseWdModeSUs(); //#	8
-  virtual limit getTxPulseSpModeSUs(); //#	9
-  virtual limit getTxDvrstIsoDB();     //#	10
+  virtual limit getTxPulseWdSIFus();   //#	6
+  virtual limit getTxPulseSpSIFus();   //#	7
+  virtual limit getTxPulseWdModeSus(); //#	8
+  virtual limit getTxPulseSpModeSus(); //#	9
+  virtual limit getTxDvrstIsodB();     //#	10
 
-  virtual limit getRepDlySIFUs();   //#	11
-  virtual limit getRepDlySIFACUs(); //#	12
-  virtual limit getRepDlyModeSUs(); //#	13
+  virtual limit getRepDlySIFus();   //#	11
+  virtual limit getRepDlySIFACus(); //#	12
+  virtual limit getRepDlyModeSus(); //#	13
 
-  virtual limit getRepJitSIFUs(); //#	14
-  virtual limit getRepJitModeS(); //#	15
+  virtual limit getRepJitSIFus(); //#	14
+  virtual limit getRepJitModeSus(); //#	15
 
-  virtual limit getRxMTLSIFDBm(); //#	16
+  virtual limit getRxMTLSIFdBm(); //#	16
 
-  virtual limit getRxMTLModeSDBm(); //#	17
+  virtual limit getRxMTLModeSdBm(); //#	17
 
-  virtual limit getRxMTLSIFACModeSDB(); //#	18
+  virtual limit getRxMTLSIFACModeSdB(); //#	18
 
-  virtual limit getRxSLSSupSIFDB();       //#	19
-  virtual limit getRxSLSNoSupSIFDB();     //#	20
-  virtual limit getRxSLSSupModeSDB();     //#	21
-  virtual limit getRxSLSNoSupModeSDB();   //#	22
-  virtual limit getRxSLSSupAlClDB();      //#	23
-  virtual limit getRxSLSNoSupAlClDB();    //#	24
-  virtual limit getRxSLSSupATCAlClDB();   //#	25
-  virtual limit getRxSLSNoSupATCAlClDB(); //#	26
+  virtual limit getRxSLSSupSIFdB();       //#	19
+  virtual limit getRxSLSNoSupSIFdB();     //#	20
+  virtual limit getRxSLSSupModeSdB();     //#	21
+  virtual limit getRxSLSNoSupModeSdB();   //#	22
+  virtual limit getRxSLSSupAlCldB();      //#	23
+  virtual limit getRxSLSNoSupAlCldB();    //#	24
+  virtual limit getRxSLSSupATCAlCldB();   //#	25
+  virtual limit getRxSLSNoSupATCAlCldB(); //#	26
 };
 #endif //LIMITS_H

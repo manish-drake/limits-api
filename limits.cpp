@@ -7,15 +7,15 @@ Limits::~Limits()
 {
 }
 
-limit Limits::getTxPwrDbW()
+limit Limits::getTxPwrdBW()
 {
     return limit();
 }
-limit Limits::getTxPwrDroopSifDb()
+limit Limits::getTxPwrDroopSifdB()
 {
     return limit();
 }
-limit Limits::getTxPwrDroopModeSDb()
+limit Limits::getTxPwrDroopModeSdB()
 {
     return limit();
 }
@@ -27,87 +27,87 @@ limit Limits::getTxFreqAccyModeSMHz()
 {
     return limit();
 }
-limit Limits::getTxPulseWdSIFUs()
+limit Limits::getTxPulseWdSIFus()
 {
     return limit();
 }
-limit Limits::getTxPulseSpSIFUs()
+limit Limits::getTxPulseSpSIFus()
 {
     return limit();
 }
-limit Limits::getTxPulseWdModeSUs()
+limit Limits::getTxPulseWdModeSus()
 {
     return limit();
 }
-limit Limits::getTxPulseSpModeSUs()
+limit Limits::getTxPulseSpModeSus()
 {
     return limit();
 }
-limit Limits::getTxDvrstIsoDB()
+limit Limits::getTxDvrstIsodB()
 {
     return limit();
 }
-limit Limits::getRepDlySIFUs()
+limit Limits::getRepDlySIFus()
 {
     return limit();
 }
-limit Limits::getRepDlySIFACUs()
+limit Limits::getRepDlySIFACus()
 {
     return limit();
 }
-limit Limits::getRepDlyModeSUs()
+limit Limits::getRepDlyModeSus()
 {
     return limit();
 }
-limit Limits::getRepJitSIFUs()
+limit Limits::getRepJitSIFus()
 {
     return limit();
 }
-limit Limits::getRepJitModeS()
+limit Limits::getRepJitModeSus()
 {
     return limit();
 }
-limit Limits::getRxMTLSIFDBm()
+limit Limits::getRxMTLSIFdBm()
 {
     return limit();
 }
-limit Limits::getRxMTLModeSDBm()
+limit Limits::getRxMTLModeSdBm()
 {
     return limit();
 }
-limit Limits::getRxMTLSIFACModeSDB()
+limit Limits::getRxMTLSIFACModeSdB()
 {
     return limit();
 }
-limit Limits::getRxSLSSupSIFDB()
+limit Limits::getRxSLSSupSIFdB()
 {
     return limit();
 }
-limit Limits::getRxSLSNoSupSIFDB()
+limit Limits::getRxSLSNoSupSIFdB()
 {
     return limit();
 }
-limit Limits::getRxSLSSupModeSDB()
+limit Limits::getRxSLSSupModeSdB()
 {
     return limit();
 }
-limit Limits::getRxSLSNoSupModeSDB()
+limit Limits::getRxSLSNoSupModeSdB()
 {
     return limit();
 }
-limit Limits::getRxSLSSupAlClDB()
+limit Limits::getRxSLSSupAlCldB()
 {
     return limit();
 }
-limit Limits::getRxSLSNoSupAlClDB()
+limit Limits::getRxSLSNoSupAlCldB()
 {
     return limit();
 }
-limit Limits::getRxSLSSupATCAlClDB()
+limit Limits::getRxSLSSupATCAlCldB()
 {
     return limit();
 }
-limit Limits::getRxSLSNoSupATCAlClDB()
+limit Limits::getRxSLSNoSupATCAlCldB()
 {
     return limit();
 }

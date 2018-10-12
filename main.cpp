@@ -7,8 +7,8 @@ int main(int argc, char* argv[]){
     UNUSED(argc);
     UNUSED(argv);
 
-    auto limits = LimitsProvider::Instance()->Get(XpndrClassEnum::SIF);
-    cout << limits->getTxPwrDbW().min() << endl;
+    auto limits = LimitsProvider::Instance()->Get(XpndrClassEnum::CLASS1SINGLE);
+    cout << limits->getTxPwrdBW().min() << endl;
     
     cin.ignore();
     return 0;
