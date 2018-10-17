@@ -3,6 +3,8 @@
 #include <string>
 #include <memory>
 #include <iostream>
+#include <functional>
+
 using std::string;
 using std::cout;
 using std::endl;
@@ -14,15 +16,19 @@ class limit
   private:
     decimal m_seed = 0;
     decimal m_min = 0;
-    decimal m_max = 0;
+    decimal m_max = 0;  
+    std::function<decimal(decimal)> m_varMin;
+    std::function<decimal(decimal)> m_varMax;
+
     bool m_varSeed;
     bool m_donTest;
 
+    int m_op = -1;
+
   public:
     limit();
-    limit(const decimal &rangeFactor);
     limit(const decimal &min, const decimal &max);
-    limit(const decimal &seed, const decimal &uLim, const decimal &lLim);
+    limit(std::function<decimal(decimal)> varMin, std::function<decimal(decimal)> varMax);
     static limit Create(decimal *seed, string *op, decimal *change);
 
     ~limit();
