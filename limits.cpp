@@ -16,7 +16,7 @@ limit Limits::getTxPwrdBW()
 }
 limit Limits::getTxPwrDroopSifdB()
 {
-    return this->limits[1]
+    return this->limits[1];
 }
 limit Limits::getTxPwrDroopModeSdB()
 {
@@ -44,7 +44,7 @@ limit Limits::getTxPulseWdModeSus()
 }
 limit Limits::getTxPulseSpModeSus()
 {
-    return this->limits8[];
+    return this->limits[8];
 }
 limit Limits::getTxDvrstIsodB()
 {
