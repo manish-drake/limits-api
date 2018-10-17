@@ -9,7 +9,8 @@ Class2Single::~Class2Single()
 
 limit Class2Single::getTxPwrDroopModeSdB()
 {
-    return Limits->getTxPwrDroopModeSdB();
+    Limits limits;
+    return limits.getTxPwrDroopModeSdB();
 }
 limit Class2Single::getTxFreqAccySifMHz()
 {
