@@ -7,7 +7,7 @@ using std::string;
 class Limits
 {
 private:
-  limit limits[25];
+  limit limits[26];
 public:
   Limits();
   ~Limits();
