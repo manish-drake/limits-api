@@ -39,10 +39,19 @@ DEPS          = $(OBJECTS:.o=.d)
 DESTDIR       = .
 TARGET        = target
 ####### Customized Vars
-INCPATH	     += 
-VPATH        +=	
-LIBS         += 
-SOURCES	     += 
+INCPATH	     += -I/home/manish/git/ts-ui/sqlite-core 
+VPATH        +=	/home/manish/git/ts-ui/sqlite-core
+LIBS         += -lsqlite3 -lpthread
+SOURCES	     += dbmanager.cpp \
+		persistablebase.cpp \
+		table.cpp \
+		db.cpp \
+		columns.cpp \
+		objecttype.cpp \
+		catalogue.cpp \
+		master.cpp \
+		dbcache.cpp \
+		datetime.cpp
 #########################################
 
 ####### Build rules

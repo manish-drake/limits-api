@@ -7,6 +7,7 @@ using std::string;
 class Limits
 {
 private:
+  limit limits[25];
 public:
   Limits();
   ~Limits();
@@ -45,5 +46,7 @@ public:
   virtual limit getRxSLSNoSupAlCldB();    //#	24
   virtual limit getRxSLSSupATCAlCldB();   //#	25
   virtual limit getRxSLSNoSupATCAlCldB(); //#	26
+
+  void SetLimit(const int& fxId, const limit &lmt);
 };
 #endif //LIMITS_H
