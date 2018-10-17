@@ -12,7 +12,7 @@ Limits::~Limits()
 
 limit Limits::getTxPwrdBW()
 {
-    return this->limits[0]; //limit();
+    return this->limits[0];//limit();
 }
 limit Limits::getTxPwrDroopSifdB()
 {
