@@ -12,107 +12,107 @@ Limits::~Limits()
 
 limit Limits::getTxPwrdBW()
 {
-    return limit();
+    return this->limits[0]; //limit();
 }
 limit Limits::getTxPwrDroopSifdB()
 {
-    return limit();
+    return this->limits[1]
 }
 limit Limits::getTxPwrDroopModeSdB()
 {
-    return limit();
+    return this->limits[2];
 }
 limit Limits::getTxFreqAccySifMHz()
 {
-    return limit();
+    return this->limits[3];
 }
 limit Limits::getTxFreqAccyModeSMHz()
 {
-    return limit();
+    return this->limits[4];
 }
 limit Limits::getTxPulseWdSIFus()
 {
-    return limit();
+    return this->limits[5];
 }
 limit Limits::getTxPulseSpSIFus()
 {
-    return limit();
+    return this->limits[6];
 }
 limit Limits::getTxPulseWdModeSus()
 {
-    return limit();
+    return this->limits[7];
 }
 limit Limits::getTxPulseSpModeSus()
 {
-    return limit();
+    return this->limits8[];
 }
 limit Limits::getTxDvrstIsodB()
 {
-    return limit();
+    return this->limits[9];
 }
 limit Limits::getRepDlySIFus()
 {
-    return limit();
+    return this->limits[10];
 }
 limit Limits::getRepDlySIFACus()
 {
-    return limit();
+    return this->limits[12];
 }
 limit Limits::getRepDlyModeSus()
 {
-    return limit();
+    return this->limits[13];
 }
 limit Limits::getRepJitSIFus()
 {
-    return limit();
+    return this->limits[14];
 }
 limit Limits::getRepJitModeSus()
 {
-    return limit();
+    return this->limits[15];
 }
 limit Limits::getRxMTLSIFdBm()
 {
-    return limit();
+    return this->limits[16];
 }
 limit Limits::getRxMTLModeSdBm()
 {
-    return limit();
+    return this->limits[17];
 }
 limit Limits::getRxMTLSIFACModeSdB()
 {
-    return limit();
+    return this->limits[18];
 }
 limit Limits::getRxSLSSupSIFdB()
 {
-    return limit();
+    return this->limits[19];
 }
 limit Limits::getRxSLSNoSupSIFdB()
 {
-    return limit();
+    return this->limits[20];
 }
 limit Limits::getRxSLSSupModeSdB()
 {
-    return limit();
+    return this->limits[21];
 }
 limit Limits::getRxSLSNoSupModeSdB()
 {
-    return limit();
+    return this->limits[22];
 }
 limit Limits::getRxSLSSupAlCldB()
 {
-    return limit();
+    return this->limits[23];
 }
 limit Limits::getRxSLSNoSupAlCldB()
 {
-    return limit();
+    return this->limits[24];
 }
 limit Limits::getRxSLSSupATCAlCldB()
 {
-    return limit();
+    return this->limits[25];
 }
 limit Limits::getRxSLSNoSupATCAlCldB()
 {
-    return limit();
+    return this->limits[26];
 }
 
 void Limits::SetLimit(const int& fxId, const limit &lmt)
