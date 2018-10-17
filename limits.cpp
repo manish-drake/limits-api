@@ -1,6 +1,9 @@
 #include "limits.h"
+#include "catalogue.h"
+
 Limits::Limits()
 {
+    
 }
 
 Limits::~Limits()
@@ -110,4 +113,9 @@ limit Limits::getRxSLSSupATCAlCldB()
 limit Limits::getRxSLSNoSupATCAlCldB()
 {
     return limit();
+}
+
+void Limits::SetLimit(const int& fxId, const limit &lmt)
+{
+    limits[fxId] = lmt;
 }
