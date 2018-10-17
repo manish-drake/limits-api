@@ -16,7 +16,7 @@ limit Limits::getTxPwrdBW()
 }
 limit Limits::getTxPwrDroopSifdB()
 {
-    return this->limits[1]
+    return this->limits[1];
 }
 limit Limits::getTxPwrDroopModeSdB()
 {

@@ -9,41 +9,50 @@ Class2Single::~Class2Single()
 
 limit Class2Single::getTxPwrDroopModeSdB()
 {
-    return limit();
+    return Limits->getTxPwrDroopModeSdB();
 }
 limit Class2Single::getTxFreqAccySifMHz()
 {
-    return limit();
+    Limits limits;
+    return limits.getTxFreqAccySifMHz();
 }
 limit Class2Single::getTxFreqAccyModeSMHz()
 {
-    return limit();
+    Limits limits;
+    return limits.getTxFreqAccyModeSMHz();
 }
 limit Class2Single::getRepDlyModeSus()
 {
-    return limit();
+    Limits limits;
+    return limits.getRepDlyModeSus();
 }
 limit Class2Single::getRepJitModeSus()
 {
-    return limit();
+    Limits limits;
+    return limits.getRepJitModeSus();
 }
 limit Class2Single::getRxMTLModeSdBm()
 {
-    return limit();
+    Limits limits;
+    return limits.getRxMTLModeSdBm();
 }
 limit Class2Single::getRxSLSSupModeSdB()
 {
-    return limit();
+    Limits limits;
+    return limits.getRxSLSSupModeSdB();
 }
 limit Class2Single::getRxSLSNoSupModeSdB()
 {
-    return limit();
+    Limits limits;
+    return limits.getRxSLSNoSupModeSdB();
 }
 limit Class2Single::getRxSLSSupATCAlCldB()
 {
-    return limit();
+    Limits limits;
+    return limits.getRxSLSSupATCAlCldB();
 }
 limit Class2Single::getRxSLSNoSupATCAlCldB()
 {
-    return limit();
+    Limits limits;
+    return limits.getRxSLSNoSupATCAlCldB();
 }

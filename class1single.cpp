@@ -8,5 +8,6 @@ Class1Single::~Class1Single()
 }
 limit Class1Single::getTxPwrdBW()
 {
-    return limit();
+    Limits limits;
+    return limits.getTxPwrdBW();
 }
