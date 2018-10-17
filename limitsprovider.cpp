@@ -26,15 +26,15 @@ std::unique_ptr<Limits> LimitsProvider::getLimits(const int &classId)
         for (auto &lmt : *lmts)
         {
             int fxId = lmt->getInt("Fxid");
-            std::unique_ptr<double> seed = nullptr;
-            std::unique_ptr<double> chg = nullptr;
-            std::unique_ptr<string> op = nullptr;
+            std::shared_ptr<double> seed = nullptr;
+            std::shared_ptr<double> chg = nullptr;
+            std::shared_ptr<string> op = nullptr;
             if (lmt->hasValue("Seed", PlatformTypeEnum::PLAT_DBL))
-                seed = std::unique_ptr<double>(new double(lmt->getDouble("Seed")));
+                seed = std::shared_ptr<double>(new double(lmt->getDouble("Seed")));
             if (lmt->hasValue("Change", PlatformTypeEnum::PLAT_DBL))
-                chg = std::unique_ptr<double>(new double(lmt->getDouble("Change")));
+                chg = std::shared_ptr<double>(new double(lmt->getDouble("Change")));
             if (lmt->hasValue("Operator", PlatformTypeEnum::PLAT_STR))
-                op = std::unique_ptr<string>(new string(lmt->getString("Operator")));
+                op = std::shared_ptr<string>(new string(lmt->getString("Operator")));
             cout << "fx: " << m[fxId] << endl;
             limit lmt_up = limit::Create(seed.get(), op.get(), chg.get());
             limits->SetLimit(fxId, lmt_up);

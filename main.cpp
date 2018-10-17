@@ -132,7 +132,10 @@ int main(int argc, char *argv[])
     auto class2single = LimitsProvider::Instance()->Get(XpndrClassEnum::CLASS2SINGLE);
     auto class1single = LimitsProvider::Instance()->Get(XpndrClassEnum::CLASS1SINGLE);
     auto class1diversity = LimitsProvider::Instance()->Get(XpndrClassEnum::CLASS1DIVERSITY);
-
+    auto l =limits->getTxPwrDroopModeSdB();
+    l.setSeed(100);
+    cout << l.min() << endl;
+    cout << l.max() << endl;
     cin.ignore();
     return 0;
 }

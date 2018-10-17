@@ -29,23 +29,26 @@ limit limit::Create(decimal *seed, string *op, decimal *change)
             {
                 cout << "min: arg, max: "
                      << "arg + " << *change << endl;
+                decimal d = *change;
                 return limit(
                     [](const decimal &sd) { return sd; },
-                    [change](const decimal &sd) { return (sd + *change); });
+                    [d](const decimal &sd) { return (sd + d); });
             }
             else if (*op == "-") //1
             {
                 cout << "min: arg - " << *change << ", max: arg" << endl;
+                decimal d = *change;
                 return limit(
-                    [change](const decimal &sd) { return (*change - sd); },
+                    [d](const decimal &sd) { return (sd - d); },
                     [](const decimal &sd) { return sd; });
             }
             else if (*op == "+/-") //2
             {
                 cout << "min: arg - " << *change << ", max: arg + " << *change << endl;
+                decimal d = *change;
                 return limit(
-                    [change](const decimal &sd) { return (*change - sd); },
-                    [change](const decimal &sd) { return (sd + *change); });
+                    [d](const decimal &sd) { return (sd - d); },
+                    [d](const decimal &sd) { return (sd + d); });
             }
             else if ((*op == "<=") /*3*/ || (*op == ">=") /*4*/)
             {
