@@ -19,13 +19,15 @@ enum XpndrClassEnum
   CLASS1DIVERSITY
 };
 
+using Limits_up = std::unique_ptr<Limits>;
+
 class LimitsProvider
 {
 private:
   LimitsProvider();
   ~LimitsProvider();
   static LimitsProvider m_instance;
-  std::unique_ptr<Limits> getLimits(const int &classId);
+  Limits_up getLimits(const int &classId);
 
 public:
   static LimitsProvider *Instance()
@@ -33,7 +35,7 @@ public:
     return &m_instance;
   }
 
-  std::unique_ptr<Limits> Get(const XpndrClassEnum &xpndrClass);
+  Limits_up Get(const XpndrClassEnum &xpndrClass);
 
   std::map<int, const char*> tempmap()
   {

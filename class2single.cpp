@@ -6,54 +6,55 @@ Class2Single::Class2Single()
 Class2Single::~Class2Single()
 {
 }
-
+/*
+    limit getTxPwrDroopModeSdB() override;  //#3
+    limit getTxFreqAccySifMHz() override;  //#4
+    limit getTxFreqAccyModeSMHz() override;  //#5
+    limit getRepDlyModeSus() override;  //#13
+    limit getRepJitModeSus() override;  //#15
+    limit getRxMTLModeSdBm() override;  //#17
+    limit getRxSLSSupModeSdB() override;  //#21
+    limit getRxSLSNoSupModeSdB() override;  //#22
+    limit getRxSLSSupATCAlCldB() override;  //#25
+    limit getRxSLSNoSupATCAlCldB() override;  //#26
+*/
 limit Class2Single::getTxPwrDroopModeSdB()
 {
-    Limits limits;
-    return limits.getTxPwrDroopModeSdB();
+    return limits[2];
 }
 limit Class2Single::getTxFreqAccySifMHz()
 {
-    Limits limits;
-    return limits.getTxFreqAccySifMHz();
+    return limits[3];
 }
 limit Class2Single::getTxFreqAccyModeSMHz()
 {
-    Limits limits;
-    return limits.getTxFreqAccyModeSMHz();
+    return limits[4];
 }
 limit Class2Single::getRepDlyModeSus()
 {
-    Limits limits;
-    return limits.getRepDlyModeSus();
+    return limits[12];
 }
 limit Class2Single::getRepJitModeSus()
 {
-    Limits limits;
-    return limits.getRepJitModeSus();
+    return limits[14];
 }
 limit Class2Single::getRxMTLModeSdBm()
 {
-    Limits limits;
-    return limits.getRxMTLModeSdBm();
+    return limits[16];
 }
 limit Class2Single::getRxSLSSupModeSdB()
 {
-    Limits limits;
-    return limits.getRxSLSSupModeSdB();
+    return limits[20];
 }
 limit Class2Single::getRxSLSNoSupModeSdB()
 {
-    Limits limits;
-    return limits.getRxSLSNoSupModeSdB();
+    return limits[21];
 }
 limit Class2Single::getRxSLSSupATCAlCldB()
 {
-    Limits limits;
-    return limits.getRxSLSSupATCAlCldB();
+    return limits[24];
 }
 limit Class2Single::getRxSLSNoSupATCAlCldB()
 {
-    Limits limits;
-    return limits.getRxSLSNoSupATCAlCldB();
+    return limits[25];
 }

@@ -8,6 +8,5 @@ Class1Diversity::~Class1Diversity()
 }
 limit Class1Diversity::getTxDvrstIsodB()
 {
-    Limits limits;
-    return limits.getTxDvrstIsodB();
+    return limits[10];
 }

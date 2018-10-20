@@ -2,6 +2,10 @@
 limit::limit() : m_donTest{true}
 {
 }
+limit::limit(const int &op, const decimal &raw) : m_op{op},
+                                                  m_raw{raw}
+{
+}
 
 limit::limit(const decimal &min, const decimal &max) : m_min{min},
                                                        m_max{max},
@@ -29,32 +33,24 @@ limit limit::Create(decimal *seed, string *op, decimal *change)
             {
                 cout << "min: arg, max: "
                      << "arg + " << *change << endl;
-                decimal d = *change;
-                return limit(
-                    [](const decimal &sd) { return sd; },
-                    [d](const decimal &sd) { return (sd + d); });
+                return limit(0, *change);
             }
             else if (*op == "-") //1
             {
                 cout << "min: arg - " << *change << ", max: arg" << endl;
-                decimal d = *change;
-                return limit(
-                    [d](const decimal &sd) { return (sd - d); },
-                    [](const decimal &sd) { return sd; });
+                return limit(1, *change);
             }
             else if (*op == "+/-") //2
             {
                 cout << "min: arg - " << *change << ", max: arg + " << *change << endl;
-                decimal d = *change;
-                return limit(
-                    [d](const decimal &sd) { return (sd - d); },
-                    [d](const decimal &sd) { return (sd + d); });
+                return limit(2, *change);
             }
             else if ((*op == "<=") /*3*/ || (*op == ">=") /*4*/)
             {
                 cout << "arg2 " << *op << " arg1 + (" << *change << ")" << endl;
                 limit l;
                 l.m_varSeed = true;
+                l.m_raw = *change;
                 l.m_op = (*op == "<=") ? 3 : 4;
                 return l;
             }

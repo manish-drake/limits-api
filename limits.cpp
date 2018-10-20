@@ -1,6 +1,42 @@
 #include "limits.h"
 #include "catalogue.h"
 
+void Limits::Populate()
+{
+    TX.power.Minimum = this->getTxPwrdBW().min();
+    TX.power.Maximum = this->getTxPwrdBW().max();
+    TX.power.DroopSIF = this->getTxPwrDroopSifdB().raw();
+    TX.power.DroopModeS = this->getTxPwrDroopModeSdB().raw();
+
+    TX.frequency.AccuracySIF = this->getTxFreqAccySifMHz().raw();
+    TX.frequency.AccuracyModeS = this->getTxFreqAccyModeSMHz().raw();
+
+    TX.pulse.MinimumWidthSIF = this->getTxPulseWdSIFus().min();
+    TX.pulse.MaximumWidthSIF = this->getTxPulseWdSIFus().max();
+    TX.pulse.MinimumWidthModeS = this->getTxPulseWdModeSus().min();
+    TX.pulse.MaximumWidthModeS = this->getTxPulseWdModeSus().max();
+    TX.pulse.PulseSpacingSIF = this->getTxPulseSpSIFus().raw();
+    TX.pulse.PulseSpacingModes = this->getTxPulseSpModeSus().raw();
+
+    Reply.delay.MaximumSIF = this->getRepDlySIFus().max();
+    Reply.delay.MinimumSIF = this->getRepDlySIFus().min();
+    Reply.delay.MaximumModeS = this->getRepDlyModeSus().max();
+    Reply.delay.MinimumModeS = this->getRepDlyModeSus().min();
+    Reply.delay.SIFAtoC = this->getRepDlySIFACus().raw();
+
+    Reply.jitter.SIF = this->getRepJitSIFus().raw();
+    Reply.jitter.ModeS = this->getRepJitModeSus().raw();
+
+    RX.MTL.MinimumSIF = this->getRxMTLSIFdBm().min();
+    RX.MTL.MaximumSIF = this->getRxMTLSIFdBm().max();
+    RX.MTL.MinimumModeS = this->getRxMTLModeSdBm().min();
+    RX.MTL.MaximumModeS = this->getRxMTLModeSdBm().max();
+
+    RX.MTL.SIFAvsModeCvsModeS = 1;
+
+    
+}
+
 Limits::Limits()
 {
     
@@ -119,3 +155,4 @@ void Limits::SetLimit(const int& fxId, const limit &lmt)
 {
     limits[fxId] = lmt;
 }
+

@@ -128,14 +128,34 @@ int main(int argc, char *argv[])
 
     DBCache::Current().AddMaster(mstLimitsTbl);
 
+    LimitsProvider *provider = LimitsProvider::Instance();
+
+    Limits_up sif = provider->Get(XpndrClassEnum::SIF);
+
+    // limit lmt = sif->getTxPwrDroopSifdB();
+
+    Limits_up cls2Single = provider->Get(XpndrClassEnum::CLASS2SINGLE);
+    Limits_up cls1Single = provider->Get(XpndrClassEnum::CLASS1SINGLE);
+    Limits_up cls1Diversity = provider->Get(XpndrClassEnum::CLASS1DIVERSITY);
+
+
     auto limits = LimitsProvider::Instance()->Get(XpndrClassEnum::SIF);
     auto class2single = LimitsProvider::Instance()->Get(XpndrClassEnum::CLASS2SINGLE);
     auto class1single = LimitsProvider::Instance()->Get(XpndrClassEnum::CLASS1SINGLE);
     auto class1diversity = LimitsProvider::Instance()->Get(XpndrClassEnum::CLASS1DIVERSITY);
-    auto l =limits->getTxPwrDroopModeSdB();
-    l.setSeed(100);
-    cout << l.min() << endl;
-    cout << l.max() << endl;
+    // auto lmt = limits->getTxPwrDroopSifdB();
+
+    // limit lmtTxPwrdBW = limits->getTxPwrdBW();
+    // cout << lmtTxPwrdBW.min() << endl;
+    // cout << lmtTxPwrdBW.max() << endl;
+
+    // limit lmtTxFreqAccySifMHz = limits->getTxFreqAccySifMHz();
+    // lmtTxFreqAccySifMHz.setSeed(100);
+    // cout << lmtTxFreqAccySifMHz.min() << endl;
+    // cout << lmtTxFreqAccySifMHz.max() << endl;
+
+    
+
     cin.ignore();
     return 0;
 }

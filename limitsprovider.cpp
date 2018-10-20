@@ -15,9 +15,9 @@ LimitsProvider::~LimitsProvider()
 {
 }
 
-std::unique_ptr<Limits> LimitsProvider::getLimits(const int &classId)
+Limits_up LimitsProvider::getLimits(const int &classId)
 {
-    std::unique_ptr<Limits> limits(new Limits());
+    Limits_up limits(new Limits());
     up_catalogue lmtCat;
     if (DBCache::Current().Get("limits", lmtCat))
     {        
@@ -37,14 +37,15 @@ std::unique_ptr<Limits> LimitsProvider::getLimits(const int &classId)
                 op = std::shared_ptr<string>(new string(lmt->getString("Operator")));
             cout << "fx: " << m[fxId] << endl;
             limit lmt_up = limit::Create(seed.get(), op.get(), chg.get());
-            limits->SetLimit(fxId, lmt_up);
+            limits->SetLimit(fxId - 1, lmt_up);
             cout << endl;
         }
+        limits->Populate();
     }
     return limits;
 }
 
-std::unique_ptr<Limits> LimitsProvider::Get(const XpndrClassEnum &xpndrClass)
+Limits_up LimitsProvider::Get(const XpndrClassEnum &xpndrClass)
 {
     switch (xpndrClass)
     {

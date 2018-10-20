@@ -17,6 +17,7 @@ class limit
     decimal m_seed = 0;
     decimal m_min = 0;
     decimal m_max = 0;  
+    decimal m_raw = 0;
     std::function<decimal(decimal)> m_varMin;
     std::function<decimal(decimal)> m_varMax;
 
@@ -27,6 +28,7 @@ class limit
 
   public:
     limit();
+    limit(const int &op, const decimal &change);
     limit(const decimal &min, const decimal &max);
     limit(std::function<decimal(decimal)> varMin, std::function<decimal(decimal)> varMax);
     static limit Create(decimal *seed, string *op, decimal *change);
@@ -34,6 +36,10 @@ class limit
     ~limit();
     decimal min();
     decimal max();
+    inline decimal raw()
+    {
+      return m_raw;
+    }
     inline bool doNotTest()
     {
         return m_donTest;
