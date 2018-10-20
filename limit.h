@@ -10,21 +10,20 @@ using std::cout;
 using std::endl;
 
 using decimal = double;
-
+#define UNUSED(x) (void)(x)
 class limit
 {
   private:
     decimal m_seed = 0;
     decimal m_min = 0;
     decimal m_max = 0;  
+    int m_op = -1;
     decimal m_raw = 0;
     std::function<decimal(decimal)> m_varMin;
     std::function<decimal(decimal)> m_varMax;
 
     bool m_varSeed;
-    bool m_donTest;
-
-    int m_op = -1;
+    bool m_donTest;    
 
   public:
     limit();

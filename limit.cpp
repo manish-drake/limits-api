@@ -116,7 +116,10 @@ void limit::setSeed(const decimal &seed)
 
 bool limit::testArgs(const decimal &arg1, const decimal &arg2)
 {
+    UNUSED(arg1);
+    UNUSED(arg2);
     if (m_varSeed)
     {
     }
+    return true;
 }
