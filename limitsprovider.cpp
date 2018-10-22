@@ -28,13 +28,13 @@ Limits_up LimitsProvider::getLimits(const int &classId)
             int fxId = lmt->getInt("Fxid");
             std::shared_ptr<double> seed = nullptr;
             std::shared_ptr<double> chg = nullptr;
-            std::shared_ptr<string> op = nullptr;
+            std::shared_ptr<int> op = nullptr;
             if (lmt->hasValue("Seed", PlatformTypeEnum::PLAT_DBL))
                 seed = std::shared_ptr<double>(new double(lmt->getDouble("Seed")));
             if (lmt->hasValue("Change", PlatformTypeEnum::PLAT_DBL))
                 chg = std::shared_ptr<double>(new double(lmt->getDouble("Change")));
             if (lmt->hasValue("Operator", PlatformTypeEnum::PLAT_STR))
-                op = std::shared_ptr<string>(new string(lmt->getString("Operator")));
+                op = std::shared_ptr<int>(new int(lmt->getInt("Operator")));
             cout << "fx: " << m[fxId] << endl;
             limit lmt_up = limit::Create(seed.get(), op.get(), chg.get());
             limits->SetLimit(fxId - 1, lmt_up);

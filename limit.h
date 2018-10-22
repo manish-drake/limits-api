@@ -30,7 +30,7 @@ class limit
     limit(const int &op, const decimal &change);
     limit(const decimal &min, const decimal &max);
     limit(std::function<decimal(decimal)> varMin, std::function<decimal(decimal)> varMax);
-    static limit Create(decimal *seed, string *op, decimal *change);
+    static limit Create(decimal *seed, int *op, decimal *change);
 
     ~limit();
     decimal min();

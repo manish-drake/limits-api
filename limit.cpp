@@ -18,7 +18,7 @@ limit::limit(std::function<decimal(decimal)> varMin, std::function<decimal(decim
 {
 }
 
-limit limit::Create(decimal *seed, string *op, decimal *change)
+limit limit::Create(decimal *seed, int *op, decimal *change)
 {
     if (!op)
     {
@@ -29,29 +29,29 @@ limit limit::Create(decimal *seed, string *op, decimal *change)
     {
         if (!seed)
         {
-            if (*op == "+") //0
+            if (*op == 0) // '+'
             {
                 cout << "min: arg, max: "
                      << "arg + " << *change << endl;
                 return limit(0, *change);
             }
-            else if (*op == "-") //1
+            else if (*op == 1) // '-'
             {
                 cout << "min: arg - " << *change << ", max: arg" << endl;
                 return limit(1, *change);
             }
-            else if (*op == "+/-") //2
+            else if (*op == 2) // '+/-'
             {
                 cout << "min: arg - " << *change << ", max: arg + " << *change << endl;
                 return limit(2, *change);
             }
-            else if ((*op == "<=") /*3*/ || (*op == ">=") /*4*/)
+            else if ((*op == 4) /* '<=' */ || (*op == 3) /* '>=' */)
             {
                 cout << "arg2 " << *op << " arg1 + (" << *change << ")" << endl;
                 limit l;
                 l.m_varSeed = true;
                 l.m_raw = *change;
-                l.m_op = (*op == "<=") ? 3 : 4;
+                l.m_op = *op ;   //(*op == "<=") ? 3 : 4
                 return l;
             }
             else
@@ -62,17 +62,17 @@ limit limit::Create(decimal *seed, string *op, decimal *change)
         }
         else
         {
-            if (*op == "+")
+            if (*op == 0) // '+'
             {
                 cout << "min: " << *seed << ", max: " << *seed + *change << endl;
                 return limit(*seed, (*seed + *change));
             }
-            else if (*op == "-")
+            else if (*op == 1) // '-'
             {
                 cout << "min: " << *seed - *change << ", max: " << *seed << endl;
                 return limit((*seed - *change), *seed);
             }
-            else if (*op == "+/-")
+            else if (*op == 2) // '+/-'
             {
                 cout << "min: " << *seed - *change << ", max: " << *seed + *change << endl;
                 return limit((*seed - *change), (*seed + *change));
@@ -121,5 +121,5 @@ bool limit::testArgs(const decimal &arg1, const decimal &arg2)
     if (m_varSeed)
     {
     }
-    return true;
+    return true; 
 }
